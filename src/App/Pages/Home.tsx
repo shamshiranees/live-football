@@ -84,7 +84,7 @@ function Home(props: any) {
                 padding: 80,
                 top: "64px",
                 left: "0px",
-                width: "100%", backgroundColor: 'rgba(0,0,0,0.3)',
+                 backgroundColor: 'rgba(0,0,0,0.3)',
                 [theme.breakpoints.down("sm")]: {
                     top: 60,
                     left: 20,
