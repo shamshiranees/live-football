@@ -7,7 +7,7 @@ import {createLogger} from 'redux-logger';
 const logger = createLogger();
 const releaseMiddleware = [apiMiddleware, thunk];
 const devMiddleware = [...releaseMiddleware, logger];
-const selectedMiddleware =  devMiddleware;
+const selectedMiddleware =  releaseMiddleware;
 
 const store = createStore(rootReducer, applyMiddleware(...selectedMiddleware));
 
