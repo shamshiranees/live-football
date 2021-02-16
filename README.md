@@ -1,6 +1,10 @@
 # Getting Started with Live Football
 
-This is a sample project in Reactjs - Typescript which list curent football hightlights. You can search for a specific match.App used Redux for state management.
+This is a sample project in Reactjs - Typescript which list football hightlights. You can search for a specific match. App used Redux for state management.
+
+## ScreenShots
+
+![ScreenShot](https://github.com/shamshiranees/live-football/blob/master/screenshot.png)
 
 
 ## Continuos Deployment
