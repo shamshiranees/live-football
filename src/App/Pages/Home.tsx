@@ -32,7 +32,7 @@ function Home(props: any) {
                 //     margin: 0
                 // }
             }, grid: {
-                marginTop: 30
+                marginTop: 0
             },
             search: {
                 position: "relative",
@@ -80,7 +80,7 @@ function Home(props: any) {
             },
             overlay: {
                 position: "absolute",
-                height: 290,
+                height: 225,
                 padding: 80,
                 top: "64px",
                 left: "0px",
@@ -126,7 +126,7 @@ function Home(props: any) {
 
                 <div className={classes.overlay}>
                     <Typography style={{ color: "#FFFFFF" }} component="div">
-                        <Box style={{ fontWeight: 800, fontSize: 70 }}>Welcome</Box>
+                        <Box style={{ fontWeight: 800, fontSize: 70 }}>Welcome home</Box>
                         <Box style={{ fontWeight: 600, fontSize: 40, color: 'yellow' }}>
                             Expore the goals and highlights from a number of football leagues and tournaments
             </Box>

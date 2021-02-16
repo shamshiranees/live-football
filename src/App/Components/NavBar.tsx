@@ -10,7 +10,7 @@ createStyles({
 function NavBar() {
     const classes = useStyles();
     return (
-        <AppBar position="static">
+        <AppBar position="fixed">
   <Toolbar style={{background:'primary'}}>
     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
       <Football />
