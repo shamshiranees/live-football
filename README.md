@@ -1,6 +1,6 @@
 # Getting Started with Live Football
 
-[DEMO](https://entryapp-408e3.web.app/)
+[Live-Demo: https://entryapp-408e3.web.app/](https://entryapp-408e3.web.app/)
 
 ## ScreenShots
 
