@@ -32,7 +32,7 @@ function Home(props: any) {
                 //     margin: 0
                 // }
             }, grid: {
-                marginTop: 30
+                marginTop: 0
             },
             search: {
                 position: "relative",
@@ -80,7 +80,7 @@ function Home(props: any) {
             },
             overlay: {
                 position: "absolute",
-                height: 290,
+                height: 225,
                 padding: 80,
                 top: "64px",
                 left: "0px",
