@@ -80,11 +80,11 @@ function Home(props: any) {
             },
             overlay: {
                 position: "absolute",
-                height: 225,
-                padding: 80,
+                height: 265,
+                padding: 80, paddingTop: 40,
                 top: "64px",
                 left: "0px",
-                 backgroundColor: 'rgba(0,0,0,0.3)',
+                backgroundColor: 'rgba(0,0,0,0.3)',
                 [theme.breakpoints.down("sm")]: {
                     top: 60,
                     left: 20,
@@ -118,6 +118,7 @@ function Home(props: any) {
         <div>
 
             <Card className={classes.root}>
+                {/* <AppTest/> */}
                 <NavBar />
                 <CardMedia
                     image={'https://images.pexels.com/photos/270085/pexels-photo-270085.jpeg'}
@@ -125,13 +126,15 @@ function Home(props: any) {
                 />
 
                 <div className={classes.overlay}>
-                    <Typography style={{ color: "#FFFFFF" }} component="div">
-                        <Box style={{ fontWeight: 800, fontSize: 70 }}>Welcome home</Box>
-                        <Box style={{ fontWeight: 600, fontSize: 40, color: 'yellow' }}>
-                            Expore the goals and highlights from a number of football leagues and tournaments
+                    <div style={{ flexDirection: 'row', justifyContent: 'space-around', display: "flex" }}>
+                        <Typography style={{ color: "#FFFFFF" ,width:'50%'}} component="div">
+                            <Box style={{ fontWeight: 800, fontSize: 70,fontFamily:"'Source Sans Pro', sans-serif" }}>Welcome home</Box>
+                            <Box style={{ fontWeight: 600, fontSize: 40, color: 'yellow',fontFamily:"'Source Sans Pro', sans-serif" }}>
+                                Expore live scores, goals and highlights from a number of football leagues and tournaments
             </Box>
-                    </Typography>
-                    <br></br>
+                        </Typography>
+                        <div style={{ height: 300, overflow: 'hidden', borderRadius: 8 }} dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.scorebat.com/embed/livescore/" frameborder="0" width="600" height="760" allowfullscreen allow='autoplay; fullscreen' style="width:600px;height:760px;overflow:hidden;display:block;" class="_scorebatEmbeddedPlayer_"></iframe><script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'scorebat-jssdk'));</script>` }}></div>
+                    </div>
                 </div>
             </Card>
             <SearchBar onSearch={onSearch} />
@@ -139,7 +142,7 @@ function Home(props: any) {
                 <Grid item xs={12}>
                     <Grid container justify="center" spacing={spacing}>
                         {sortedList.map((value: any, index: number) => (
-                            <Grid key={value} item onClick={() => tapCard(index)}>
+                            <Grid key={value.date + index} item onClick={() => tapCard(index)}  >
                                 <MediaCard data={value} />
                             </Grid>
                         ))}

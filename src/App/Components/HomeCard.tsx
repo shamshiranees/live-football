@@ -13,7 +13,7 @@ import moment from 'moment'
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 300, borderRadius: 10, height: 410, boxShadow: "0 2.8px 2.2px rgba(0, 0, 0, 0.034),0 6.7px 5.3px rgba(0, 0, 0, 0.048),0 12.5px 10px rgba(0, 0, 0, 0.06),0 22.3px 17.9px rgba(0, 0, 0, 0.072),0 41.8px 33.4px rgba(0, 0, 0, 0.086),0 100px 80px rgba(0, 0, 0, 0.12)"
+        maxWidth: 300, borderRadius: 10, height: 420, boxShadow: "0 2.8px 2.2px rgba(0, 0, 0, 0.034),0 6.7px 5.3px rgba(0, 0, 0, 0.048),0 12.5px 10px rgba(0, 0, 0, 0.06),0 22.3px 17.9px rgba(0, 0, 0, 0.072),0 41.8px 33.4px rgba(0, 0, 0, 0.086),0 100px 80px rgba(0, 0, 0, 0.12)"
     },
     media: {
         height: 200,
@@ -50,9 +50,12 @@ export default function MediaCard(props: any) {
                 {mousehoverIndex && <IconButton className={classes.menuButton} >
                     <PlayIcon style={{ height: 80, width: 80, color: 'white', opacity: 0.8 }} />
                 </IconButton>}
-                <CardContent style={{ height: 120 }}>
+                <CardContent style={{ height: 130 }}>
                     <Typography gutterBottom variant="h5" component="h2" >
                         {data.title}
+                    </Typography>
+                    <Typography variant="body1"  component="p" style={{marginTop:-5,marginBottom:5,height:22}}>
+                    {data.competition.name}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p" >
                         Football is a family of team sports that involve, to varying degrees, kicking a ball to score a goal.
