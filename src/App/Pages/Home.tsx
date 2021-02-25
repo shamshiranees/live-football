@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 // padding: 80, paddingTop: 40,
                 // top: "64px",
                 // left: "0px",
-                width:'100%',padding:30,paddingTop:80,backgroundImage: "url(" + "https://images.pexels.com/photos/270085/pexels-photo-270085.jpeg" + ")",
+                padding:30,paddingTop:80,backgroundImage: "url(" + "https://images.pexels.com/photos/270085/pexels-photo-270085.jpeg" + ")",
                 // [theme.breakpoints.down("sm")]: {
                 //     top: 60,
                 //     left: 20,
