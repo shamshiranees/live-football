@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 // padding: 80, paddingTop: 40,
                 // top: "64px",
                 // left: "0px",
-                backgroundColor: 'rgba(0,0,0,0.3)',padding:30,paddingTop:80,backgroundImage: "url(" + "https://images.pexels.com/photos/270085/pexels-photo-270085.jpeg" + ")",
+                width:'100%',padding:30,paddingTop:80,backgroundImage: "url(" + "https://images.pexels.com/photos/270085/pexels-photo-270085.jpeg" + ")",
                 // [theme.breakpoints.down("sm")]: {
                 //     top: 60,
                 //     left: 20,
@@ -141,7 +141,7 @@ function Home(props: any) {
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
 
-                            <div style={{ height: 300, borderRadius: 8 }} dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.scorebat.com/embed/livescore/" frameborder="0" width="100%" height="440px" allowfullscreen allow='autoplay; fullscreen' style="width="100%";height="440px";overflow:hidden;display:block;" class="_scorebatEmbeddedPlayer_"></iframe><script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'scorebat-jssdk'));</script>` }}></div>
+                            <div style={{ height: 300, borderRadius: 8 ,overflow:'hidden',paddingBottom:20}} dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.scorebat.com/embed/livescore/" frameborder="0" width="100%" height="440px" allowfullscreen allow='autoplay; fullscreen' style="width="100%";height="440px";overflow:hidden;display:block;" class="_scorebatEmbeddedPlayer_"></iframe><script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'scorebat-jssdk'));</script>` }}></div>
 
 
                         </Grid>
