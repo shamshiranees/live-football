@@ -11,7 +11,7 @@ import SearchBar from '../Components/SearchBar'
 import NavBar from '../Components/NavBar'
 import { useHistory } from "react-router-dom";
 import { Match } from '../Models/Matches'
-import useWindowDimensions from '../Hooks/WindowDimention'
+
 const useStyles = makeStyles((theme: Theme) =>
         createStyles({
             root: {
@@ -89,7 +89,6 @@ const useStyles = makeStyles((theme: Theme) =>
     );
 function Home(props: any) {
     const dispatch = useDispatch()
-    const {  width } = useWindowDimensions();
     const footballData = useSelector(({ home }: AppState) => home.data);
     const sortedList = useSelector(({ home }: AppState) => home.sortedData);
     const [searchText, setsearchText] = useState('')
