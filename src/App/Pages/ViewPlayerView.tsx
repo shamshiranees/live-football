@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }))
 function ViewPlayerView() {
     let parmas: any = useParams();
-    const footballData = useSelector((state: AppState) => state.home.data);
+    const footballData = useSelector((state: AppState) => state.home.sortedData);
     return (
         <div>
             <NavBar />
