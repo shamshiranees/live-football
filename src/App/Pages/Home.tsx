@@ -11,17 +11,8 @@ import SearchBar from '../Components/SearchBar'
 import NavBar from '../Components/NavBar'
 import { useHistory } from "react-router-dom";
 import { Match } from '../Models/Matches'
-function Home(props: any) {
-    const dispatch = useDispatch()
-
-    const footballData = useSelector(({ home }: AppState) => home.data);
-    const sortedList = useSelector(({ home }: AppState) => home.sortedData);
-    const [searchText, setsearchText] = useState('')
-    useEffect(() => {
-        dispatch(fetchFootballData())
-    }, [])
-
-    const useStyles = makeStyles((theme: Theme) =>
+import useWindowDimensions from '../Hooks/WindowDimention'
+const useStyles = makeStyles((theme: Theme) =>
         createStyles({
             root: {
                 // flexGrow: 1,
@@ -79,23 +70,34 @@ function Home(props: any) {
                 width: 100
             },
             overlay: {
-                position: "absolute",
-                height: 265,
-                padding: 80, paddingTop: 40,
-                top: "64px",
-                left: "0px",
-                backgroundColor: 'rgba(0,0,0,0.3)',
-                [theme.breakpoints.down("sm")]: {
-                    top: 60,
-                    left: 20,
-                    width: "100%"
-                }
+                // position: "absolute",
+                // height: 265,
+                // padding: 80, paddingTop: 40,
+                // top: "64px",
+                // left: "0px",
+                backgroundColor: 'rgba(0,0,0,0.3)',padding:30,paddingTop:80,backgroundImage: "url(" + "https://images.pexels.com/photos/270085/pexels-photo-270085.jpeg" + ")",
+                // [theme.breakpoints.down("sm")]: {
+                //     top: 60,
+                //     left: 20,
+                //     width: "100%"
+                // }
             },
             title: {
                 flexGrow: 1,
             },
         }),
     );
+function Home(props: any) {
+    const dispatch = useDispatch()
+    const {  width } = useWindowDimensions();
+    const footballData = useSelector(({ home }: AppState) => home.data);
+    const sortedList = useSelector(({ home }: AppState) => home.sortedData);
+    const [searchText, setsearchText] = useState('')
+    useEffect(() => {
+        dispatch(fetchFootballData())
+    }, [])
+
+    
     const [spacing, setSpacing] = React.useState<GridSpacing>(2);
     const classes = useStyles();
     const onSearch = (text: string) => {
@@ -120,23 +122,37 @@ function Home(props: any) {
             <Card className={classes.root}>
                 {/* <AppTest/> */}
                 <NavBar />
-                <CardMedia
+                {/* <CardMedia
                     image={'https://images.pexels.com/photos/270085/pexels-photo-270085.jpeg'}
                     className={classes.media}
-                />
+                /> */}
 
                 <div className={classes.overlay}>
-                    <div style={{ flexDirection: 'row', justifyContent: 'space-around', display: "flex" }}>
-                        <Typography style={{ color: "#FFFFFF" ,width:'50%'}} component="div">
-                            <Box style={{ fontWeight: 800, fontSize: 70,fontFamily:"'Source Sans Pro', sans-serif" }}>Welcome home</Box>
-                            <Box style={{ fontWeight: 600, fontSize: 40, color: 'yellow',fontFamily:"'Source Sans Pro', sans-serif" }}>
-                                Expore live scores, goals and highlights from a number of football leagues and tournaments
-            </Box>
-                        </Typography>
-                        <div style={{ height: 300, overflow: 'hidden', borderRadius: 8 }} dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.scorebat.com/embed/livescore/" frameborder="0" width="600" height="760" allowfullscreen allow='autoplay; fullscreen' style="width:600px;height:760px;overflow:hidden;display:block;" class="_scorebatEmbeddedPlayer_"></iframe><script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'scorebat-jssdk'));</script>` }}></div>
-                    </div>
+                    <Grid container spacing={3} style={{height:'auto'}}>
+
+                    {/* <div className={classes.overlay}>  */}
+
+                        <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+                            <Typography style={{ color: "#FFFFFF" }} component="div">
+                                <Box style={{ fontWeight: 800, fontSize: 70, fontFamily: "'Source Sans Pro', sans-serif",lineHeight:1 }}>Welcome home</Box>
+                                <Box style={{ fontWeight: 600, fontSize: 40, color: 'yellow', fontFamily: "'Source Sans Pro', sans-serif" ,lineHeight:1}}>
+                                    Expore live scores, goals and highlights from a number of football leagues and tournaments
+  </Box>
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+
+                            <div style={{ height: 300, borderRadius: 8 }} dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.scorebat.com/embed/livescore/" frameborder="0" width="100%" height="440px" allowfullscreen allow='autoplay; fullscreen' style="width="100%";height="440px";overflow:hidden;display:block;" class="_scorebatEmbeddedPlayer_"></iframe><script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'scorebat-jssdk'));</script>` }}></div>
+
+
+                        </Grid>
+                        {/* </div> */}
+                    </Grid>
                 </div>
             </Card>
+
+
+
             <SearchBar onSearch={onSearch} />
             <Grid container className={classes.grid} spacing={2}>
                 <Grid item xs={12}>
