@@ -10,7 +10,7 @@
 
 This is a sample project in Reactjs - Typescript which list football hightlights. You can search for a specific match. App used Redux for state management.
 
-## Continuos Deployment
+## Continuous Deployment
 App has configured for continuous deployment with Firebase, and GitHub Actions.
 Check [firebase-hosting-merge.yml](https://github.com/shamshiranees/live-football/blob/master/.github/workflows/firebase-hosting-merge.yml) and [firebase-hosting-pull-request.yml](https://github.com/shamshiranees/live-football/blob/master/.github/workflows/firebase-hosting-pull-request.yml)
 
